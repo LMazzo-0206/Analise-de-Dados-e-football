@@ -319,3 +319,103 @@ print("\n=== PRECISÃO MÉDIA POR RESULTADO ===")
 print(
     df.groupby("resultado")["precisao_passes"].mean()
 ) 
+
+import matplotlib.pyplot as plt
+
+from pathlib import Path
+
+PASTA_GRAFICOS = Path(__file__).parent / "graficos"
+PASTA_GRAFICOS.mkdir(exist_ok=True)
+
+plt.figure(figsize=(7, 5))
+
+contagem_resultados.plot(kind="bar")
+
+plt.title("Distribuição dos resultados")
+plt.xlabel("Resultado")
+plt.ylabel("Número de partidas")
+
+plt.tight_layout()
+
+plt.figure(figsize=(7, 5))
+
+contagem_resultados.plot(kind="bar")
+
+plt.title("Distribuição dos resultados")
+plt.xlabel("Resultado")
+plt.ylabel("Número de partidas")
+
+plt.tight_layout()
+
+plt.savefig("graficos/01_resultados.png")
+
+plt.show()
+
+plt.figure(figsize=(8, 5))
+
+dados.groupby("resultado")["finalizacoes"].mean().plot(kind="bar")
+
+plt.title("Média de finalizações por resultado")
+plt.xlabel("Resultado")
+plt.ylabel("Média de finalizações")
+
+plt.tight_layout()
+
+plt.savefig("graficos/02_finalizacoes.png")
+
+plt.show()
+
+plt.figure(figsize=(8, 5))
+
+dados.groupby("resultado")["passes_certos"].mean().plot(kind="bar")
+
+plt.title("Média de passes certos por resultado")
+plt.xlabel("Resultado")
+plt.ylabel("Média de passes certos")
+
+plt.tight_layout()
+
+plt.savefig("graficos/03_passes_certos.png")
+
+plt.show()
+
+plt.figure(figsize=(8, 5))
+
+dados.groupby("resultado")["posse"].mean().plot(kind="bar")
+
+plt.title("Média de posse de bola por resultado")
+plt.xlabel("Resultado")
+plt.ylabel("Média de posse (%)")
+
+plt.tight_layout()
+
+plt.savefig("graficos/04_posse.png")
+
+plt.show()
+
+# Indicadores principais
+
+dados["indicadores"] = (
+    (dados["passes_certos"] >= 120).astype(int)
+    + (dados["finalizacoes"] >= 8).astype(int)
+    + (dados["posse"] >= 50).astype(int)
+)
+
+taxa_vitoria_indicadores = (
+    dados.groupby("indicadores")["resultado"]
+    .apply(lambda x: (x == "Vitoria").mean() * 100)
+)
+
+plt.figure(figsize=(8, 5))
+
+taxa_vitoria_indicadores.plot(kind="bar")
+
+plt.title("Taxa de vitória conforme os indicadores atingidos")
+plt.xlabel("Número de indicadores atingidos")
+plt.ylabel("Taxa de vitória (%)")
+
+plt.tight_layout()
+
+plt.savefig("graficos/05_taxa_vitoria_indicadores.png")
+
+plt.show()
