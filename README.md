@@ -1,4 +1,4 @@
-# Análise de Desempenho no eFootball — Henrique
+# Análise de Desempenho no eFootball 
 
 Projeto de portfólio de análise de dados desenvolvido em Python com o objetivo de investigar quais indicadores de desempenho aparecem associados às vitórias em partidas de eFootball.
 
