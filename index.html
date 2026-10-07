@@ -1,0 +1,237 @@
+DOCTYPE html
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Análise de Desempenho no efootball | Laura Mazzo</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Laura Mazzo</h1>
+
+            <div>
+                <a href="#projeto">Projeto</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#graficos">Gráficos</a>
+                <a href="#conclusao">Conclusão</a>
+            </div>
+        </nav>
+    </header>
+
+ <main>
+
+        <section id="projeto">
+
+            <p>PROJETO DE ANÁLISE DE DADOS</p>
+
+            <h2>Análise de Desempenho no eFootball</h2>
+
+            <p>
+                Quais indicadores aparecem associados às vitórias?
+            </p>
+
+            <a href="#resultados">
+                Ver resultados
+            </a>
+
+        </section>
+
+        <section id="indicadores">
+
+    <h2>Indicadores associados às vitórias</h2>
+
+    <div class="indicadores-chave">
+
+        <article class="indicador-chave" data-indicador="passes">
+            <strong>120+</strong>
+            <span>passes certos</span>
+        </article>
+
+        <article class="indicador-chave" data-indicador="finalizacoes">
+            <strong>8+</strong>
+            <span>finalizações</span>
+        </article>
+
+        <article class="indicador-chave" data-indicador="posse">
+            <strong>50%+</strong>
+            <span>posse de bola</span>
+        </article>
+
+    </div>
+
+    <div id="detalhe-indicador"></div>
+
+          </section>
+
+        <section id="resultados">
+
+    <h2>Principais resultados</h2>
+
+        <div>
+
+            <article class="indicador">
+                 <strong>54,5%</strong>
+                 <span>Taxa de vitória</span>
+            </article>
+
+             <article class="indicador">
+                 <strong>12</strong>
+                 <span>Vitórias</span>
+             </article>
+
+             <article class="indicador">
+                 <strong>120,25</strong>
+                <span>Média de passes certos nas vitórias</span>
+            </article>
+
+         </div>
+
+             </section>
+
+            <section id="graficos">
+
+                <div class="filtros-resultados">
+
+                     <button data-filtro="todos">Todos</button>
+                     <button data-filtro="vitoria">Vitórias</button>
+                     <button data-filtro="empate">Empates</button>
+                     <button data-filtro="derrota">Derrotas</button>
+
+                </div>
+
+            <p id="filtro-selecionado"></p>
+
+            <div id="lista-partidas"></div>
+    
+            <h2>Visualizações</h2>
+
+
+<div id="grafico-interativo">
+    <h3>Desempenho por resultado</h3>
+
+    <div id="grafico-resultados">
+        <div class="barra">
+            <span>Vitórias</span>
+            <div class="barra-fundo">
+                <div id="barra-vitorias" class="barra-preenchida"></div>
+            </div>
+            <strong id="valor-vitorias">0</strong>
+        </div>
+
+        <div class="barra">
+            <span>Empates</span>
+            <div class="barra-fundo">
+                <div id="barra-empates" class="barra-preenchida"></div>
+            </div>
+            <strong id="valor-empates">0</strong>
+        </div>
+
+        <div class="barra">
+            <span>Derrotas</span>
+            <div class="barra-fundo">
+                <div id="barra-derrotas" class="barra-preenchida"></div>
+            </div>
+            <strong id="valor-derrotas">0</strong>
+        </div>
+    </div>
+</div>
+
+<div>
+    <figure>
+
+            <div>
+
+                <figure>
+                    <img src="graficos/01_resultados.png" alt="Distribuição dos resultados">
+                    <figcaption>Distribuição dos resultados</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="graficos/02_finalizacoes.png" alt="Média de finalizações por resultado">
+                    <figcaption>Média de finalizações</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="graficos/03_passes_certos.png" alt="Média de passes certos por resultado">
+                    <figcaption>Média de passes certos</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="graficos/04_posse.png" alt="Média de posse de bola por resultado">
+                    <figcaption>Média de posse de bola</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="graficos/05_taxa_vitoria_indicadores.png" alt="Taxa de vitória conforme indicadores atingidos">
+                    <figcaption>Taxa de vitória por indicadores</figcaption>
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <section id="conclusao">
+
+            <h2>Conclusão</h2>
+
+            <p>
+                Dentro da amostra analisada, as vitórias aparecem associadas
+                principalmente a maior quantidade de finalizações, maior número
+                de passes certos e maior posse de bola.
+            </p>
+
+            <p>
+                O indicador que apresentou a associação mais forte foi o número
+                de passes certos: nas 8 partidas com 120 ou mais passes certos,
+                todas terminaram em vitória.
+            </p>
+
+        </section>
+
+
+        <section id="tecnologias">
+
+            <h2>Tecnologias utilizadas</h2>
+
+            <ul>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+                <li>GitHub</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Laura Mazzo — Projeto de análise de dados em eFootball
+        </p>
+
+        <a
+            href="https://github.com/LMazzo-0206/Analise-de-Dados-e-football"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Ver projeto no GitHub
+        </a>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
